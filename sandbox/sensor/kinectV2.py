@@ -88,7 +88,7 @@ class KinectV2:
         """
         Stop the thread when _platform is linux
         """
-        if self._thread_status is not 'stopped':
+        if self._thread_status != 'stopped':
             self._thread_status = 'stopped'  # set flag to end thread loop
             self._thread.join()  # wait for the thread to finish
             logger.info('Stopping frame acquisition.')
